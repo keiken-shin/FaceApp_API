@@ -15,12 +15,8 @@ const PORT = process.env.PORT || 8000;
 // DATABASE Connection
 const db = knex({
     client: 'pg',
-    connection: {
-        host: '127.0.0.1',
-        user: 'postgres',
-        password: '3127',
-        database: 'faceapp'
-    }
+    connectionString: process.env.DATABASE_URL,
+    ssl: true
 })
 
 const app = express();
